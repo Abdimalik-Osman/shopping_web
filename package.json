@@ -1,17 +1,17 @@
 {
   "name": "shopping-web",
   "version": "0.1.0",
-  "homepage": "https://Abdimalik-Osman.github.io/shopping_web",
   "private": true,
   "dependencies": {
-    "predeploy": "npm run build",
-    "deploy":"gh-pages -d build",
     "@testing-library/react": "^13.3.0",
     "firebase": "^9.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.0.2",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "redux": "^4.2.0",
+    "redux-logger": "^3.0.6",
     "sass": "^1.53.0"
   },
   "scripts": {
