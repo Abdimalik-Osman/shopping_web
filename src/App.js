@@ -1,11 +1,18 @@
+import {  useEffect } from "react";
+import {onAuthStateChangedListener,createUserDocumentFromAuth, getCurrentUser} from './utils/firebase/firebase.utils';
 import {Routes,Route} from 'react-router-dom';
-import Navigation from './components/routes/navigation/navigation-component';
-import Authentication from './components/routes/authentication-page-component/authentication-page';
-import Home  from './components/routes/home/home-component';
-import Shop  from './components/routes/shop-component/shop';
-import Checkout  from './components/routes/checkout/checkout-component';
+import { useDispatch } from "react-redux";
+import Navigation from './routes/navigation/navigation-component';
+import Authentication from './routes/authentication-page-component/authentication-page';
+import Home  from './routes/home/home-component';
+import Shop  from './routes/shop-component/shop';
+import Checkout  from './routes/checkout/checkout-component';
+import {checkUserSession} from './store/user/user-action';
 function App() {
- 
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(checkUserSession());
+},[]);
   return (
     <Routes>
       <Route path="/" element={<Navigation />}>
