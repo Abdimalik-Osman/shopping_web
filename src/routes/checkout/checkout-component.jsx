@@ -4,6 +4,8 @@ import { selectCartItems, selectCartTotal } from '../../store/cart/cart-selector
 // import {useContext} from 'react';
 // import { CartContext } from '../../components/contexts/cart-context';
 import CheckoutItem from '../../components/checkout-item/checkout-item-component';
+import PaymentForm from '../../components/payments/payment-form';
+
 const Checkout = () =>{
     // const {cartItems, cartTotal} = useContext(CartContext);
     const cartItems = useSelector(selectCartItems);
@@ -30,6 +32,7 @@ const Checkout = () =>{
             
             {cartItems.map((cartItem) => <CheckoutItem key={cartItem.id} cartItem={cartItem}/> )}
             <span className="total">Total: ${cartTotal}</span>
+            <PaymentForm />
         </div>
     )
 }
